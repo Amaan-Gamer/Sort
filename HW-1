@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Welcome to GavMart.");
+    
+    double total = 0;
+    // for loop that runs 3 transactions
+    for (int i = 0; i < 3; i++) {
+      System.out.print("Enter the name of item " + (i + 1) + ": ");
+      String itemName = scanner.nextLine();
+      // disclaimer
+      System.out.println("(Please do not include any dollar signs. Only input exact prices. ex: 9)");
+      System.out.print("Enter the price of " + itemName + ": ");
+      double itemPrice = scanner.nextDouble();
+      scanner.nextLine();
+      total += itemPrice;
+      System.out.println("Item added!");
+    }
+    // receipt
+    System.out.println("\nReceipt:");
+    System.out.println("------------------------------");
+    double tax = total * 0.09125;
+    System.out.println("Subtotal: $" + total);
+    System.out.println("\nTax: $" + tax);
+    System.out.println("\nTotal: $" + (total+tax));
+    System.out.println("------------------------------");
+    System.out.println("Thank you for shopping at GavMart!");
+  }
+}
